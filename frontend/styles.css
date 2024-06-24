@@ -73,13 +73,19 @@ body {
   padding: 10px;
   text-align: center;
   cursor: pointer;
+  transition: background-color 0.5s;
+  transition: padding 2s;
 }
 
-#chengxin { top: 30px; left: 90px; }
-#jingye { top: 30px; left: 250px; }
-#ziqiang { top: 160px; left: 90px; }
+.campus:hover{
+  background-color: gold;
+  padding: 30px;
+}
+#chengxin { top: 30px; left: 250px; }
+#jingye { top: 30px; left: 410px; }
+#ziqiang { top: 160px; left: 410px; }
 #chenggong { top: 160px; left: 250px; }
-#shengli { top: 160px; left: 410px; }
-#guangfu { top: 160px; left: 570px; }
-#boai { top: 290px; left: 90px; }
-#lixing { top: 290px; left: 250px; }
+#shengli { top: 290px; left: 250px; }
+#guangfu { top: 160px; left: 90px; }
+#doning { top: 290px; left: 410px; }
+#lixing { top: 30px; left: 90px; }
