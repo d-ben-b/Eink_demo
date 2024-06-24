@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Upload Example</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="App">
+    <!-- 文件上傳區域 -->
+    <div class="upload-section">
+      <h2>Upload Your Data</h2>
+      <input type="file" id="fileUpload">
+      <br><br>
+      <label>Select Campus:</label>
+      <div class="campus-map">
+        <button class="campus" id="chengxin" onclick="selectCampus('成杏校區')">成杏校區</button>
+        <button class="campus" id="jingye" onclick="selectCampus('敬業校區')">敬業校區</button>
+        <button class="campus" id="ziqiang" onclick="selectCampus('自強校區')">自強校區</button>
+        <button class="campus" id="chenggong" onclick="selectCampus('成功校區')">成功校區</button>
+        <button class="campus" id="shengli" onclick="selectCampus('勝利校區')">勝利校區</button>
+        <button class="campus" id="guangfu" onclick="selectCampus('光復校區')">光復校區</button>
+        <button class="campus" id="boai" onclick="selectCampus('博愛校區')">博愛校區</button>
+        <button class="campus" id="lixing" onclick="selectCampus('力行校區')">力行校區</button>
+      </div>
+      <input type="hidden" id="campusSelect" value="">
+      <br><br>
+      <label for="announcementTime">Announcement Time:</label>
+      <input type="datetime-local" id="announcementTime">
+      <br><br>
+      <div>
+        <label>Preview Image (Black and White):</label>
+        <div id="imagePreview" style="filter: grayscale(100%);"></div>
+      </div>
+      <br>
+      <div id="fileSizeWarning" style="color: red;">File size must be less than 5MB</div>
+      <br>
+      <button class="button" onclick="handleUpload()">Upload</button>
+    </div>
+
+    <!-- 上傳狀態顯示區域 -->
+    <div class="status-section">
+      <h2>Upload Status</h2>
+      <div id="statusMessage"></div>
+    </div>
+
+    <!-- 已上傳數據預覽區域 -->
+    <div class="preview-section">
+      <h2>Uploaded Data</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>File Name</th>
+            <th>Uploader</th>
+            <th>Upload Date</th>
+            <th>Campus</th>
+          </tr>
+        </thead>
+        <tbody id="uploadedDataTable">
+          <!-- 動態插入數據 -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
