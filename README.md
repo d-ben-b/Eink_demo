@@ -6,7 +6,7 @@
 ## 目錄結構
 
 ```plaintext
-your-repo-name/
+Eink_demo/
 ├── frontend/
 │   ├── index.html
 │   ├── styles.css
@@ -71,13 +71,13 @@ your-repo-name/
 1. 克隆這個倉庫到本地：
 
    ```sh
-   git clone https://github.com/your-repo-name.git
-   cd your-repo-name
+   git clone https://github.com/Eink_demo.git
+   cd Eink_demo
    ```
 
 2. 設置後端：
 
-   ```sh
+   ```
    cd my-backend
    npm install
    ```
