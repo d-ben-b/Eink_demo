@@ -24,17 +24,16 @@
         <button class="campus" id="doning" onclick="selectCampus('東寧校區')">東寧校區</button>
         <button class="campus" id="lixing" onclick="selectCampus('力行校區')">力行校區</button>
       </div>
-      <input type="hidden" id="campusSelect" value="">
+      <!-- 顯示選擇校區的訊息 -->
+      <div id="campusSelectMessage" class="message"></div>
       <br><br>
+      <img src="OIP.jpg" alt="成功大學" class="campus-image">
+      <br><br>
+      <input type="hidden" id="campusSelect" value="">
       <label for="announcementTime">Announcement Time:</label>
       <input type="datetime-local" id="announcementTime">
       <br><br>
-      <div>
-        <label>Preview Image (Black and White):</label>
-        <div id="imagePreview" style="filter: grayscale(100%);"></div>
-      </div>
-      <br>
-      <div id="fileSizeWarning" style="color: red;">File size must be less than 5MB</div>
+      <div id="fileSizeWarning" class="warning">File size must be less than 5MB</div>
       <br>
       <button class="button" onclick="handleUpload()">Upload</button>
     </div>
