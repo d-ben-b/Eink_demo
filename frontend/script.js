@@ -50,7 +50,7 @@ function handleUpload() {
 
       // 更新已上傳的數據顯示
       const newRow = uploadedDataTable.insertRow();
-      newRow.insertCell(0).innerText = data.fileName;
+      newRow.insertCell(0).innerText = data.fileName; // 顯示正確的文件名，包括中文
       newRow.insertCell(1).innerText = data.uploader;
       newRow.insertCell(2).innerText = new Date(
         data.uploadDate
@@ -74,7 +74,7 @@ function fetchUploads() {
     .then((data) => {
       data.forEach((upload) => {
         const newRow = uploadedDataTable.insertRow();
-        newRow.insertCell(0).innerText = upload.fileName;
+        newRow.insertCell(0).innerText = upload.fileName; // 顯示正確的文件名
         newRow.insertCell(1).innerText = upload.uploader;
         newRow.insertCell(2).innerText = new Date(
           upload.uploadDate
