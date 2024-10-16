@@ -1,3 +1,5 @@
+/** @format */
+
 // 用於處理選擇校區的函數
 function selectCampus(campus) {
   const campusSelectMessage = document.getElementById("campusSelectMessage");
@@ -38,7 +40,7 @@ function handleUpload() {
   formData.append("announcementTime", announcementTime);
 
   // 將數據發送到後端
-  fetch("http://localhost:5000/api/upload", {
+  fetch("https://eink-demo.onrender.com/api/upload", {
     method: "POST",
     body: formData,
   })
@@ -69,7 +71,7 @@ function fetchUploads() {
   const uploadedDataTable = document.getElementById("uploadedDataTable");
 
   // 向後端請求已上傳的數據
-  fetch("http://localhost:5000/api/uploads")
+  fetch("https://eink-demo.onrender.com/api/uploads")
     .then((response) => response.json())
     .then((data) => {
       data.forEach((upload) => {
