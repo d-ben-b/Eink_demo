@@ -12,7 +12,10 @@ app.use(express.json());
 
 // MongoDB connection
 mongoose
-  .connect(process.env.MONGODB_URI) // 确保传递正确的参数
+  .connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log("MongoDB connection error:", err));
 

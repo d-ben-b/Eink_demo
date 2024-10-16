@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 
 const uploadSchema = new mongoose.Schema({
-  fileName: String,
-  uploader: String,
-  campus: String,
+  fileName: { type: String, required: true },
+  uploader: { type: String, required: true },
+  campus: { type: String, required: true },
   uploadDate: { type: Date, default: Date.now },
 });
 
