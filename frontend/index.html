@@ -1,68 +1,101 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eink 校園智慧佈告欄系統</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="App">
-    <!-- 文件上傳區域 -->
-    <div class="upload-section">
-      <h2>Upload Your Data</h2>
-      <input type="file" id="fileUpload">
-      <br><br>
-      <label>Select Campus:</label>
-      <div class="campus-map">
-        <button class="campus" id="chengxin" onclick="selectCampus('成杏校區')"> 成杏校區</button>
-        <button class="campus" id="jingye" onclick="selectCampus('敬業校區')">敬業校區</button>
-        <button class="campus" id="ziqiang" onclick="selectCampus('自強校區')">自強校區</button>
-        <button class="campus" id="chenggong" onclick="selectCampus('成功校區')">成功校區</button>
-        <button class="campus" id="shengli" onclick="selectCampus('勝利校區')">勝利校區</button>
-        <button class="campus" id="guangfu" onclick="selectCampus('光復校區')">光復校區</button>
-        <button class="campus" id="doning" onclick="selectCampus('東寧校區')">東寧校區</button>
-        <button class="campus" id="lixing" onclick="selectCampus('力行校區')">力行校區</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eink 校園智慧佈告欄系統</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="App">
+      <!-- 文件上傳區域 -->
+      <div class="upload-section">
+        <h2>資料上傳：</h2>
+        <input type="file" id="fileUpload" />
+        <br /><br />
+        <label>選擇上傳的校區：</label>
+        <div class="campus-map">
+          <button
+            class="campus"
+            id="chengxin"
+            onclick="selectCampus('成杏校區')">
+            成杏校區
+          </button>
+          <button class="campus" id="jingye" onclick="selectCampus('敬業校區')">
+            敬業校區
+          </button>
+          <button
+            class="campus"
+            id="ziqiang"
+            onclick="selectCampus('自強校區')">
+            自強校區
+          </button>
+          <button
+            class="campus"
+            id="chenggong"
+            onclick="selectCampus('成功校區')">
+            成功校區
+          </button>
+          <button
+            class="campus"
+            id="shengli"
+            onclick="selectCampus('勝利校區')">
+            勝利校區
+          </button>
+          <button
+            class="campus"
+            id="guangfu"
+            onclick="selectCampus('光復校區')">
+            光復校區
+          </button>
+          <button class="campus" id="doning" onclick="selectCampus('東寧校區')">
+            東寧校區
+          </button>
+          <button class="campus" id="lixing" onclick="selectCampus('力行校區')">
+            力行校區
+          </button>
+        </div>
+        <!-- 顯示選擇校區的訊息 -->
+        <div id="campusSelectMessage" class="message"></div>
+        <br /><br />
+        <img src="OIP.jpg" alt="成功大學" class="campus-image" />
+        <br /><br />
+        <input type="hidden" id="campusSelect" value="" />
+        <label for="announcementTime">公告日期</label>
+        <input type="datetime-local" id="announcementTime" />
+        <br /><br />
+        <div id="fileSizeWarning" class="warning">檔案大小必須小於5MB</div>
+        <br />
+        <button class="button" onclick="handleUpload()">上傳</button>
       </div>
-      <!-- 顯示選擇校區的訊息 -->
-      <div id="campusSelectMessage" class="message"></div>
-      <br><br>
-      <img src="OIP.jpg" alt="成功大學" class="campus-image">
-      <br><br>
-      <input type="hidden" id="campusSelect" value="">
-      <label for="announcementTime">Announcement Time:</label>
-      <input type="datetime-local" id="announcementTime">
-      <br><br>
-      <div id="fileSizeWarning" class="warning">File size must be less than 5MB</div>
-      <br>
-      <button class="button" onclick="handleUpload()">Upload</button>
+
+      <!-- 上傳狀態顯示區域 -->
+      <div class="status-section">
+        <h2>上傳狀態顯</h2>
+        <div id="statusMessage"></div>
+      </div>
+
+      <!-- 已上傳數據預覽區域 -->
+      <div class="preview-section">
+        <h2>上傳時間</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>檔案名稱</th>
+              <th>上傳者</th>
+              <th>上傳時間</th>
+              <th>公告校區</th>
+            </tr>
+          </thead>
+          <tbody id="uploadedDataTable">
+            <!-- 動態插入數據 -->
+          </tbody>
+        </table>
+      </div>
     </div>
 
-    <!-- 上傳狀態顯示區域 -->
-    <div class="status-section">
-      <h2>Upload Status</h2>
-      <div id="statusMessage"></div>
-    </div>
-
-    <!-- 已上傳數據預覽區域 -->
-    <div class="preview-section">
-      <h2>Uploaded Data</h2>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>File Name</th>
-            <th>Uploader</th>
-            <th>Upload Date</th>
-            <th>Campus</th>
-          </tr>
-        </thead>
-        <tbody id="uploadedDataTable">
-          <!-- 動態插入數據 -->
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
